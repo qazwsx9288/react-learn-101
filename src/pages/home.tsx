@@ -7,6 +7,7 @@ export default function Home() {
           <Card label="1.创建组件" path="/base/1" />
           <Card label="2.展示数据" path="/base/2" />
           <Card label="3.条件渲染" path="/base/3" />
+          <Card label="4.列表渲染" path="/base/4" />
         </div>
       </div>
     </>

@@ -3,6 +3,7 @@ import Home from '@/pages/home'
 import Base1 from '../pages/base/base1'
 import Base2 from '../pages/base/base2'
 import Base3 from '../pages/base/base3'
+import Base4 from '../pages/base/base4'
 
 export const routerConfig = {
   path: '/',
@@ -23,6 +24,10 @@ export const routerConfig = {
     {
       path: '/base/3',
       element: <Base3 />
+    },
+    {
+      path: '/base/4',
+      element: <Base4 />
     }
   ]
 }
