@@ -4,10 +4,11 @@ export default function Home() {
       <div className="p-4">
         <div className="text-xl text-gray-700">Base</div>
         <div className="grid grid-cols-4 gap-2 pt-2">
-          <Card label="1.创建组件" path="/base/1" />
-          <Card label="2.展示数据" path="/base/2" />
-          <Card label="3.条件渲染" path="/base/3" />
-          <Card label="4.列表渲染" path="/base/4" />
+          <Card label="1.创建组件" path="/base/base1" />
+          <Card label="2.展示数据" path="/base/base2" />
+          <Card label="3.条件渲染" path="/base/base3" />
+          <Card label="4.列表渲染" path="/base/base4" />
+          <Card label="5.事件响应" path="/base/base5" />
         </div>
       </div>
     </>
