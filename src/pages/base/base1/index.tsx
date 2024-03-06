@@ -1,8 +1,12 @@
+// 在外部的css文件中编写css
+import './index.css'
+
 // 用 export default 指定主要组件
 export default function base1() {
   return (
     <>
-      <div className="p-4">
+      {/* 指定css类名时，使用className而不是class */}
+      <div className="base1-wrapper">
         {/* 组件首字母必须大写*/}
         <HomeLink />
       </div>
