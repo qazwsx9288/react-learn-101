@@ -2,29 +2,37 @@ export default function base1() {
   return (
     <>
       <div className="p-4">
-        {/* 使用"{}"将数据嵌入HTML */}
-        <div>{user.name}</div>
-        {/**
-         * 在style中会看到"style={{}}"这样的双括号，可能会感到困惑。
-         * 但实际上只是包裹了一个对象而已。
-         * 这意味着在style中，也可以使用js变量
-         */}
-        <img
-          className="rounded-full"
-          src={user.imageUrl}
-          alt={'Photo of ' + user.name}
-          style={{
-            width: user.imageSize,
-            height: user.imageSize
-          }}
-        />
+        {/* 可以使用三元表达式来实现条件渲染 */}
+        {isLogin ? <LoginForm /> : <LogoutForm />}
+
+        {/* 在无需else分支时，可用这样的方式来实现条件渲染 */}
+        {isAdmin && <AdminForm />}
       </div>
     </>
   )
 }
 
-const user = {
-  name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-  imageSize: 90
+const isLogin = false
+function LoginForm() {
+  return (
+    <>
+      <div>已登录</div>
+    </>
+  )
+}
+function LogoutForm() {
+  return (
+    <>
+      <div>未登录</div>
+    </>
+  )
+}
+
+const isAdmin = true
+function AdminForm() {
+  return (
+    <>
+      <div>管理员</div>
+    </>
+  )
 }
