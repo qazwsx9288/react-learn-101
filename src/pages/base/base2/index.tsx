@@ -1,4 +1,4 @@
-export default function base1() {
+export default function base() {
   return (
     <>
       <div className="p-4">

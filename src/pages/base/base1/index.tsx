@@ -2,7 +2,7 @@
 import './index.css'
 
 // 用 export default 指定主要组件
-export default function base1() {
+export default function base() {
   return (
     <>
       {/* 指定css类名时，使用className而不是class */}
