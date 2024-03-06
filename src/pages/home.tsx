@@ -4,7 +4,7 @@ export default function Home() {
       <div className="p-4">
         <div className="text-xl text-gray-700">Base</div>
         <div className="grid grid-cols-4 gap-2 pt-2">
-          <Card label="1" path="/base/1" />
+          <Card label="1.创建组件" path="/base/1" />
         </div>
       </div>
     </>
