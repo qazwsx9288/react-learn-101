@@ -1,42 +1,72 @@
 import { routerConfig } from '@/router/router-config'
 
-export default function Home() {
-  console.log(routerConfig)
+type PageType = {
+  label?: string
+  path: string
+}
 
-  const basePageList = routerConfig.children
-    .filter((page) => {
-      if (page.path.startsWith('/base')) {
-        return true
-      } else {
-        return false
-      }
-    })
-    .map((page) => {
-      return {
-        label: page?.meta?.title,
-        path: page.path
-      }
-    })
+export default function Home() {
+  // 加载页面
+  function loadPage(startPath: string) {
+    const pages = routerConfig.children
+      .filter((page) => {
+        if (page.path.startsWith(startPath)) {
+          return true
+        } else {
+          return false
+        }
+      })
+      .map((page) => {
+        return {
+          label: page?.meta?.title,
+          path: page.path
+        }
+      })
+
+    return pages
+  }
+
+  // 页面列表-基础
+  const basePageList: PageType[] = loadPage('/base')
+  // 页面列表-井字棋
+  const ticTacToePageList: PageType[] = loadPage('/tic-tac-toe')
 
   return (
     <>
       <div className="p-4">
-        <div className="text-xl text-gray-700">Base</div>
-        <div className="grid grid-cols-4 gap-2 pt-2">
-          {basePageList.map((page, index) => {
-            return (
-              <div key={index}>
-                <Card label={`${index + 1}.${page.label}`} path={page.path} />
-              </div>
-            )
-          })}
+        <div className="pb-4">
+          <div className="text-xl text-gray-700">Base</div>
+          <div className="grid grid-cols-4 gap-2 pt-2">
+            <CardWrapper pageList={basePageList}></CardWrapper>
+          </div>
+        </div>
+
+        <div className="pb-4">
+          <div className="text-xl text-gray-700">井字棋</div>
+          <div className="grid grid-cols-4 gap-2 pt-2">
+            <CardWrapper pageList={ticTacToePageList}></CardWrapper>
+          </div>
         </div>
       </div>
     </>
   )
 }
 
-function Card(props: { label: string; path: string }) {
+function CardWrapper({ pageList }: { pageList: PageType[] }) {
+  return (
+    <>
+      {pageList.map((page, index) => {
+        return (
+          <div key={index}>
+            <Card label={`${index + 1}.${page.label}`} path={page.path} />
+          </div>
+        )
+      })}
+    </>
+  )
+}
+
+function Card(props: PageType) {
   return (
     <>
       <a href={props.path}>
