@@ -1,14 +1,17 @@
 import React from 'react'
 import Layout from '@/pages/Layout'
 import Home from '@/pages/home'
-// import Base1 from '../pages/base/base1'
-// import Base2 from '../pages/base/base2'
-// import Base3 from '../pages/base/base3'
-// import Base4 from '../pages/base/base4'
-// import Base5 from '../pages/base/base5'
+
+// 定义页面组件的类型
+type PageComponent = {
+  default: React.ComponentType
+}
 
 // 自动引入pages目录下所有的tsx文件
-const pages = import.meta.glob('/src/pages/base/*/*.tsx', { eager: true })
+const pages: Record<string, PageComponent> = import.meta.glob(
+  '/src/pages/base/*/*.tsx',
+  { eager: true }
+)
 
 // 根据页面文件路径自动生成路由配置
 const generateRoutes = () => {
