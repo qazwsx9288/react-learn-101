@@ -1,7 +1,7 @@
 // 页面标题
 export const pageTitle = '展示数据'
 
-export default function base() {
+export default function BasePage() {
   return (
     <>
       <div className="p-4">

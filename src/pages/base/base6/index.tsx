@@ -4,7 +4,7 @@ import { useState } from 'react'
 // 页面标题
 export const pageTitle = '数据更新'
 
-export default function base() {
+export default function BasePage() {
   return (
     <>
       <div className="p-4">

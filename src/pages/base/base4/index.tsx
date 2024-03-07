@@ -1,7 +1,7 @@
 // 页面标题
 export const pageTitle = '列表渲染'
 
-export default function base() {
+export default function BasePage() {
   return (
     <>
       <div className="p-4">
