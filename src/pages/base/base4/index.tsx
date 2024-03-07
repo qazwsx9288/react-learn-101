@@ -1,3 +1,6 @@
+// 页面标题
+export const pageTitle = '列表渲染'
+
 export default function base() {
   return (
     <>

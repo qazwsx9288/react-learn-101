@@ -1,3 +1,6 @@
+// 页面标题
+export const pageTitle = '事件响应'
+
 export default function base() {
   return (
     <>

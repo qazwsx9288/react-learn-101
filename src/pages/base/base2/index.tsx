@@ -1,3 +1,6 @@
+// 页面标题
+export const pageTitle = '展示数据'
+
 export default function base() {
   return (
     <>

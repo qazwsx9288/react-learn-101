@@ -5,6 +5,7 @@ import Home from '@/pages/home'
 // 定义页面组件的类型
 type PageComponent = {
   default: React.ComponentType
+  pageTitle?: string
 }
 
 // 自动引入pages目录下所有的tsx文件
@@ -22,7 +23,15 @@ const generateRoutes = () => {
     const route = path.replace('/src/pages', '').replace('index.tsx', '')
     // 创建组件
     const element = React.createElement(component.default)
-    return { path: route, element }
+    // 获取标题
+    const title = component.pageTitle
+    return {
+      path: route,
+      element,
+      meta: {
+        title: title
+      }
+    }
   })
 }
 
@@ -32,6 +41,9 @@ export const routerConfig = {
   children: [
     {
       path: '/',
+      meta: {
+        title: '首页'
+      },
       element: <Home />
     },
     ...generateRoutes()

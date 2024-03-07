@@ -1,6 +1,7 @@
 // 在外部的css文件中编写css
 import './index.css'
-
+// 页面标题
+export const pageTitle = '创建组件'
 // 用 export default 指定主要组件
 export default function base() {
   return (

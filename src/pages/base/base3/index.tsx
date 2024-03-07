@@ -1,3 +1,6 @@
+// 页面标题
+export const pageTitle = '条件渲染'
+
 export default function base() {
   return (
     <>
