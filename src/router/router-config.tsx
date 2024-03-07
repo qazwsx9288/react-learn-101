@@ -10,7 +10,7 @@ type PageComponent = {
 
 // 自动引入pages目录下所有的tsx文件
 const pages: Record<string, PageComponent> = import.meta.glob(
-  '/src/pages/base/*/*.tsx',
+  '/src/pages/**/*.tsx',
   { eager: true }
 )
 
