@@ -1,5 +1,4 @@
-// 页面标题
-export const pageTitle = 'Export the component 1/4'
+export const pageTitle = 'Export the component'
 
 export default function BasePage() {
   return (
