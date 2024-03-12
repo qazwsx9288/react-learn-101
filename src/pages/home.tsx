@@ -28,11 +28,13 @@ export default function Home() {
 
   // pagse list
   const basePageList: PageType[] = loadPage('/base')
+  const uiPageList: PageType[] = loadPage('/describing-the-ui')
 
   return (
     <>
       <div className="p-4">
         <Chapter name="Base" pageList={basePageList} />
+        <Chapter name="Challenges: Describing the UI" pageList={uiPageList} />
       </div>
     </>
   )
