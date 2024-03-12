@@ -1,5 +1,10 @@
 export const pageTitle = 'Fix the return statement'
 
+/**
+ * Note
+ * wrapping the img tag by void tag.
+ */
+
 export default function Profile() {
   return (
     <>
