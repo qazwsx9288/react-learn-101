@@ -6,7 +6,7 @@ type PageType = {
 }
 
 export default function Home() {
-  // 加载页面
+  // load page
   function loadPage(startPath: string) {
     const pages = routerConfig.children
       .filter((page) => {
@@ -26,26 +26,36 @@ export default function Home() {
     return pages
   }
 
-  // 页面列表-基础
+  // pagse list
   const basePageList: PageType[] = loadPage('/base')
-  // 页面列表-井字棋
-  const ticTacToePageList: PageType[] = loadPage('/tic-tac-toe')
 
   return (
     <>
       <div className="p-4">
-        <div className="pb-4">
-          <div className="text-xl text-gray-700">Base</div>
-          <div className="grid grid-cols-4 gap-2 pt-2">
-            <CardWrapper pageList={basePageList}></CardWrapper>
-          </div>
-        </div>
+        <Chapter name="Base" pageList={basePageList} />
+      </div>
+    </>
+  )
+}
 
-        <div className="pb-4">
-          <div className="text-xl text-gray-700">井字棋</div>
-          <div className="grid grid-cols-4 gap-2 pt-2">
-            <CardWrapper pageList={ticTacToePageList}></CardWrapper>
-          </div>
+/**
+ * current page types
+ * */
+type IChapterProps = {
+  pageList: PageType[]
+  name: string
+}
+
+/**
+ * current page components
+ */
+function Chapter(props: IChapterProps) {
+  return (
+    <>
+      <div className="pb-4">
+        <div className="text-xl text-gray-700">{props.name}</div>
+        <div className="grid grid-cols-4 gap-2 pt-2">
+          <CardWrapper pageList={props.pageList}></CardWrapper>
         </div>
       </div>
     </>
@@ -65,7 +75,6 @@ function CardWrapper({ pageList }: { pageList: PageType[] }) {
     </>
   )
 }
-
 function Card(props: PageType) {
   return (
     <>
