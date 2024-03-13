@@ -81,8 +81,8 @@ function Card(props: PageType) {
   return (
     <>
       <a href={props.path}>
-        <div className="rounded bg-gray-100 p-4 text-center text-gray-600 hover:bg-gray-300">
-          {props.label}
+        <div className="flex h-full items-center justify-center rounded bg-gray-100 p-4 text-center text-gray-600 hover:bg-gray-300">
+          <div>{props.label}</div>
         </div>
       </a>
     </>
