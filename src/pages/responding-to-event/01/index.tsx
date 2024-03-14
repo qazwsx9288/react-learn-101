@@ -1,4 +1,4 @@
-export const pageTitle = 'Export the component'
+export const pageTitle = 'Fix an event handler'
 
 export default function LightSwitch() {
   function handleClick() {
