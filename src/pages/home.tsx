@@ -29,7 +29,7 @@ export default function Home() {
   // pagse list
   const basePageList: PageType[] = loadPage('/base')
   const uiPageList: PageType[] = loadPage('/describing-the-ui')
-  const respondingList: PageType[] = loadPage('/responding-to-event')
+  const respondingList: PageType[] = loadPage('/adding-interactivity')
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Home() {
         <Chapter name="Base" pageList={basePageList} />
         <Chapter name="Challenges: Describing the UI" pageList={uiPageList} />
         <Chapter
-          name="Challenges: Responding To Event"
+          name="Challenges: Adding Interactivity"
           pageList={respondingList}
         />
       </div>
